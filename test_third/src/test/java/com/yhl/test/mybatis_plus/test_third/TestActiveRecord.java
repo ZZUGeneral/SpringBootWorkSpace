@@ -2,6 +2,7 @@ package com.yhl.test.mybatis_plus.test_third;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.yhl.test.mybatis_plus.test_third.entity.User;
+import com.yhl.test.mybatis_plus.test_third.enums.SexEnum;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -21,23 +22,34 @@ import java.util.List;
 public class TestActiveRecord {
 
     @Test
-    public void tesSelectById(){
+    public void tesSelectById() {
         User user = new User();
-        user.setId(2L);
+        user.setId(10L);
         User user1 = user.selectById();
         System.out.println(user1);
     }
+
     @Test
-    public void tesSelect(){
+    public void tesSelect() {
         User user = new User();
         QueryWrapper<User> wrapper = new QueryWrapper<>();
-        wrapper.ge("age",30);
+        wrapper.ge("age", 30);
         List<User> userList = user.selectList(wrapper);
-        for(User user1: userList)
+        for (User user1 : userList)
             System.out.println(user1);
     }
     @Test
-    public void tesInsert(){
+    public void tesSelectBySex() {
+        User user = new User();
+        QueryWrapper<User> wrapper = new QueryWrapper<>();
+        wrapper.ge("sex", SexEnum.WOMAN);
+        List<User> userList = user.selectList(wrapper);
+        for (User user1 : userList)
+            System.out.println(user1);
+    }
+
+    @Test
+    public void tesInsert() {
         User user = new User();
         user.setUserName("liubei");
         user.setPassword("123455");
@@ -47,8 +59,9 @@ public class TestActiveRecord {
         boolean insert = user.insert();
         System.out.println(insert);
     }
+
     @Test
-    public void testUpdate(){
+    public void testUpdate() {
         User user = new User();
         user.setId(8L);
         user.setAge(31);
@@ -56,11 +69,33 @@ public class TestActiveRecord {
         System.out.println(update);
     }
     @Test
-    public void testDelete(){
+    public void testUpdateVersion() {
+        User user = new User();
+        user.setId(2L); //查询条件
+        User userVersion = user.selectById();
+        user.setVersion(userVersion.getVersion());
+        user.setAge(21);//更新数据
+        user.setVersion(1);//当前版本信息
+        boolean update = user.updateById();
+        System.out.println(update);
+    }
+
+    @Test
+    public void testDelete() {
         User user = new User();
         user.setId(8L);
         boolean delete = user.deleteById();
         System.out.println(delete);
     }
 
+    @Test
+    public void testSelect(){
+        User user= new User();
+        QueryWrapper<User> wrapper = new QueryWrapper<>();
+        wrapper.gt("age",30);
+        List<User> userList = user.selectList(wrapper);
+        for(User user1 : userList){
+            System.out.println(user1);
+        }
+    }
 }

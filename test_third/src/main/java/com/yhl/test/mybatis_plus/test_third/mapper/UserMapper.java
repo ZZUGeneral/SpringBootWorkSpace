@@ -1,8 +1,9 @@
 package com.yhl.test.mybatis_plus.test_third.mapper;
 
-import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.yhl.test.mybatis_plus.test_third.entity.User;
 import org.apache.ibatis.annotations.Mapper;
+
+import java.util.List;
 
 /**
  * @author 杨贺龙
@@ -11,7 +12,6 @@ import org.apache.ibatis.annotations.Mapper;
  * @description:
  */
 @Mapper
-public interface UserMapper extends BaseMapper<User> {
-
-    public User findById(Long id);
+public interface UserMapper extends MyBaseMapper<User> {
+    User findById(Long id);
 }

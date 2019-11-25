@@ -5,6 +5,7 @@ import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.yhl.test.mybatis_plus.test_third.entity.User;
+import com.yhl.test.mybatis_plus.test_third.enums.SexEnum;
 import com.yhl.test.mybatis_plus.test_third.mapper.UserMapper;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -35,11 +36,13 @@ public class TestThirdApplicationTests {
     @Test
     public void testInsert() {
         User user = new User();
-        user.setAge(20);
-        user.setMail("test@itcast.cn");
-        user.setName("曹操");
-        user.setUserName("caocao");
-        user.setPassword("123456");
+        user.setAge(18);
+        user.setMail("diaochan@itcast.cn");
+        user.setName("貂蝉");
+        user.setUserName("dianchan");
+        //user.setPassword("123456");
+        user.setAddress("苏州");
+        user.setSex(SexEnum.WOMAN);
         int result = this.userMapper.insert(user); //返回的result是受影响的行数，并不是自增后的id
         System.out.println("result = > " + result);
         System.out.println("id = > " + user.getId()); //自增后的id会回填到对象中
@@ -106,7 +109,7 @@ public class TestThirdApplicationTests {
         System.out.println("数据总页数: " + iPage.getPages());
         System.out.println("当前页数: " + iPage.getCurrent());
         List<User> recodes = iPage.getRecords();
-        for(User user : recodes){
+        for (User user : recodes) {
             System.out.println(user);
         }
     }
@@ -171,7 +174,7 @@ public class TestThirdApplicationTests {
     }
 
     @Test
-    public void testFindById(){
+    public void testFindById() {
         User user = this.userMapper.findById(2L);
         System.out.println(user);
     }

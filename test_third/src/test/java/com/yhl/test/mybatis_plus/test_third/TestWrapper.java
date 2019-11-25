@@ -101,5 +101,12 @@ public class TestWrapper {
             System.out.println(user);
         }
     }
+    @Test
+    public void testUpdateAll(){
+        User user = new User();
+        user.setAge(31);
+        boolean result = user.update(null);
+        System.out.println("Result = >" + result);
+    }
 }
 
