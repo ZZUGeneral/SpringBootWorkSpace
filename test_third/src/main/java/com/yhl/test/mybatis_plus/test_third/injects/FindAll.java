@@ -17,6 +17,6 @@ public class FindAll extends AbstractMethod {
         String sql = "select * from " + tableInfo.getTableName();
         SqlSource sqlSource = languageDriver.createSqlSource(configuration, sql, modelClass);
 
-        return this.addSelectMappedStatement(mapperClass, "findAll", sqlSource,modelClass, tableInfo);
+        return this.addSelectMappedStatement(mapperClass, "findAll", sqlSource, modelClass, tableInfo);
     }
 }

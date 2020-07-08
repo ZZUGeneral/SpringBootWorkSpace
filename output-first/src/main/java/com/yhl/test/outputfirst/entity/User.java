@@ -21,7 +21,7 @@ public class User extends Model<User> {
     @TableId(type = IdType.AUTO)
     private Long id;
     private String userName;
-    @TableField(select = false,fill = FieldFill.INSERT)  //查询时不加入查询字段,插入数据时自动填充
+    @TableField(select = false, fill = FieldFill.INSERT)  //查询时不加入查询字段,插入数据时自动填充
     private String password;
     private String name;
     private Integer age;

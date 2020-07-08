@@ -21,8 +21,9 @@ import java.util.List;
 public class TestMyMapper {
     @Autowired
     UserMapper userMapper;
+
     @Test
-    public void testFindAll(){
+    public void testFindAll() {
         List<User> users = this.userMapper.findAll();
         for (User user : users) {
             System.out.println(user);

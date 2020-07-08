@@ -38,6 +38,7 @@ public class TestActiveRecord {
         for (User user1 : userList)
             System.out.println(user1);
     }
+
     @Test
     public void tesSelectBySex() {
         User user = new User();
@@ -68,6 +69,7 @@ public class TestActiveRecord {
         boolean update = user.updateById();
         System.out.println(update);
     }
+
     @Test
     public void testUpdateVersion() {
         User user = new User();
@@ -89,12 +91,12 @@ public class TestActiveRecord {
     }
 
     @Test
-    public void testSelect(){
-        User user= new User();
+    public void testSelect() {
+        User user = new User();
         QueryWrapper<User> wrapper = new QueryWrapper<>();
-        wrapper.gt("age",30);
+        wrapper.gt("age", 30);
         List<User> userList = user.selectList(wrapper);
-        for(User user1 : userList){
+        for (User user1 : userList) {
             System.out.println(user1);
         }
     }

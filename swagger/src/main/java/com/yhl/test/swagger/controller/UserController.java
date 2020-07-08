@@ -54,7 +54,7 @@ public class UserController {
     }
 
     @ApiOperation(value = "删除用户", notes = "根据传入的用户ID删除用户")
-    @ApiImplicitParam(value = "用户ID",paramType = "path")
+    @ApiImplicitParam(value = "用户ID", paramType = "path")
     @DeleteMapping("/user/{id}")
     public Object delete(@PathVariable("id") int id) {
         return users.remove(id);

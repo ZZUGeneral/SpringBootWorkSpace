@@ -18,9 +18,9 @@ public class MyMetaObjectHandler implements MetaObjectHandler {
         //先获取到password的值,再进行判断,如果为空,就进行填充,如果不为空就不做处理
         Object password = getFieldValByName("password", metaObject);
         if (null == password) {
-            setFieldValByName("password","123456",metaObject);
+            setFieldValByName("password", "123456", metaObject);
         }
-        setFieldValByName("version",1,metaObject);
+        setFieldValByName("version", 1, metaObject);
     }
 
     //更新数据时填充

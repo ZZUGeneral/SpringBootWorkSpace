@@ -1,6 +1,7 @@
 package com.yhl.test.mybatis_plus.entity;
 
 import java.time.LocalDateTime;
+
 import com.baomidou.ant.common.BaseEntity;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -8,7 +9,7 @@ import lombok.experimental.Accessors;
 
 /**
  * <p>
- * 
+ *
  * </p>
  *
  * @author YHL

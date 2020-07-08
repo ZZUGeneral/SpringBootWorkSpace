@@ -17,5 +17,5 @@ public class User {
     private String code;
     private String status;
     private Date gmt_greate;
-    private  Date gmt_modified;
+    private Date gmt_modified;
 }

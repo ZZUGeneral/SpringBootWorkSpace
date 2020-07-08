@@ -19,15 +19,16 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @Configuration  //必须存在
 @EnableSwagger2  // 必须存在
 // 必须存在 扫描的API Controller包
-@ComponentScan(basePackages = {"com.yhl.test.swagger.controller" })
+@ComponentScan(basePackages = {"com.yhl.test.swagger.controller"})
 public class SwaggerConfig {
     @Bean
-    public Docket customDocket(){
-        return  new Docket(DocumentationType.SWAGGER_2).apiInfo(apiInfo());
+    public Docket customDocket() {
+        return new Docket(DocumentationType.SWAGGER_2).apiInfo(apiInfo());
     }
-    public ApiInfo apiInfo(){
-        Contact contact = new Contact("YHL","http://www.baidu.com/","1359541394@qq.com");
-        return  new ApiInfoBuilder()
+
+    public ApiInfo apiInfo() {
+        Contact contact = new Contact("YHL", "http://www.baidu.com/", "1359541394@qq.com");
+        return new ApiInfoBuilder()
                 .title("测试Swagger API")
                 .description("API接口")
                 .contact(contact)
