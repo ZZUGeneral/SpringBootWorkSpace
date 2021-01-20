@@ -20,6 +20,7 @@
         <option value="$PROJECT_DIR$/activemq/pom.xml" />
         <option value="$PROJECT_DIR$/vsftpd/pom.xml" />
         <option value="$PROJECT_DIR$/jedis/pom.xml" />
+        <option value="$PROJECT_DIR$/rabbitmq/pom.xml" />
       </list>
     </option>
   </component>

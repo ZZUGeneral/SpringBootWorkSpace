@@ -10,22 +10,26 @@
         <module name="mybatis_plus" />
         <module name="jedis" />
         <module name="mybatis" />
+        <module name="demo" />
         <module name="security" />
         <module name="test_first" />
         <module name="test_third" />
         <module name="swagger" />
         <module name="output-first" />
-        <module name="activemq" />
-        <module name="vsftpd" />
         <module name="test_second" />
+        <module name="vsftpd" />
+        <module name="rabbitmq" />
+        <module name="activemq" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="activemq" target="1.8" />
+      <module name="demo" target="1.8" />
       <module name="jedis" target="1.8" />
       <module name="mybatis" target="1.8" />
       <module name="mybatis_plus" target="1.8" />
       <module name="output-first" target="1.8" />
+      <module name="rabbitmq" target="1.5" />
       <module name="security" target="1.8" />
       <module name="swagger" target="1.8" />
       <module name="test_first" target="1.8" />
@@ -37,6 +41,7 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="activemq" options="-parameters" />
+      <module name="demo" options="-parameters" />
       <module name="jedis" options="-parameters" />
       <module name="mybatis" options="-parameters" />
       <module name="mybatis_plus" options="-parameters" />
